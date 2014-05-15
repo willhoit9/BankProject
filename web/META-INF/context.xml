@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/Bank">
+
+    <Resource name="jdbc/bank" auth="Container"
+    maxActive="100" maxIdle="30" maxWait="10000" 
+    username="demo" password="demo123" 
+    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    url="jdbc:sqlserver://localhost\SQLEXPRESS:1433;databaseName=BankDB"
+    logAbandoned="true" removeAbandoned="true" 
+    removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+</Context>

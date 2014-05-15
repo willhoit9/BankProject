@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.bank.LoginServlet</servlet-class>
+        <init-param>
+            <param-name>failMessage</param-name>
+            <param-value>Username and Password must be filled out.</param-value>
+        </init-param>
+
+    </servlet>
+    <servlet>
+        <servlet-name>CreateServlet</servlet-name>
+        <servlet-class>com.bank.CreateServlet</servlet-class>
+        <init-param>
+            <param-name>createMessage</param-name>
+            <param-value>All fields must be filled out to continue.</param-value>
+        </init-param>
+        <init-param>
+            <param-name>successCreateMessage</param-name>
+            <param-value>Account was created. Please sign in.</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>WithdrawServlet</servlet-name>
+        <servlet-class>com.bank.WithdrawServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DepositServlet</servlet-name>
+        <servlet-class>com.bank.DepositServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetAccountServlet</servlet-name>
+        <servlet-class>com.bank.GetAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/MyAccount</url-pattern>
+<!--        <url-pattern>/LoginServlet</url-pattern>-->
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateServlet</servlet-name>
+        <url-pattern>/CreateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WithdrawServlet</servlet-name>
+        <url-pattern>/WithdrawServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DepositServlet</servlet-name>
+        <url-pattern>/DepositServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAccountServlet</servlet-name>
+        <url-pattern>/GetAccountServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>/login.jsp</welcome-file>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_404.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error_java.jsp</location>
+    </error-page>
+</web-app>
